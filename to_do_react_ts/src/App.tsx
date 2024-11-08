@@ -12,6 +12,7 @@ import TaskList from "./components/TaskList"
 import {ITask} from './interfaces/Task'
 import { useState } from "react"
 import Modal from "./components/Modal"
+import { BsDisplay } from "react-icons/bs"
 
 
 function App() {
@@ -26,6 +27,19 @@ function App() {
     )
   }
 
+  const hideOrShowModal = (display: boolean) =>{
+    const modal = document.querySelector('#modal')
+    if(display){
+      modal!.classList.remove('hide')
+    } else{
+      modal!.classList.add('hide')
+    }
+  }
+
+  const editTask = ():void =>{
+    hideOrShowModal(true)
+  }
+
   return (
    <div>
     <Modal children={<TaskForm btnText="Editar tarefa" taskList={taskList}/>}/>
@@ -37,7 +51,7 @@ function App() {
       </div>
       <div>
         <h2>Suas tarefas</h2>
-        <TaskList taskList={taskList} handleDelete={deleteTask} />
+        <TaskList taskList={taskList} handleDelete={deleteTask} handleEdit={editTask} />
       </div>
     </main>
     <Footer />
