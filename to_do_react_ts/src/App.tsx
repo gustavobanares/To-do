@@ -12,7 +12,7 @@ import TaskList from "./components/TaskList"
 import {ITask} from './interfaces/Task'
 import { useState } from "react"
 import Modal from "./components/Modal"
-import { BsDisplay } from "react-icons/bs"
+
 
 
 function App() {

@@ -1,4 +1,3 @@
-import React from 'react'
 
 // interfaces
 import { ITask } from '../interfaces/Task'
